@@ -1,0 +1,19 @@
+.login-register-btn {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.login-register-btn:hover {
+    background-color: #28a745; /* Green hover */
+    color: white;
+    border-color: #28a745;
+    text-decoration: none;
+}
