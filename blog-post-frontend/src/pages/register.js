@@ -21,7 +21,7 @@ function Register() {
             await axios.post("/auth/register", form);
             const loginRes = await axios.post("/auth/login", form, { withCredentials: true });
             localStorage.setItem("user", JSON.stringify(loginRes.data.user));
-            localStorage.setItem("csrfToken", loginRes.headers["x-csrf-token"]);
+            localStorage.setItem("csrfToken", loginRes.data.csrfToken);
             setSuccess("Registration successful!");
             setTimeout(() => navigate(from), 1000);
         } catch (err) {

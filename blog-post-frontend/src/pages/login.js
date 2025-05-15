@@ -20,7 +20,7 @@ function Login() {
         try {
             const res = await axios.post("/auth/login", form, { withCredentials: true });
             localStorage.setItem("user", JSON.stringify(res.data.user));
-            localStorage.setItem("csrfToken", res.headers["x-csrf-token"]);
+            localStorage.setItem("csrfToken", res.data.csrfToken);
             setSuccess("Login successful!");
             setTimeout(() => navigate(from), 1000);
         } catch (err) {
