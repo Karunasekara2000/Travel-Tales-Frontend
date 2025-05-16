@@ -9,7 +9,8 @@ function NavBar({ user }) {
         localStorage.removeItem("user");
         localStorage.removeItem("csrfToken");
         document.cookie = "jwt=; Max-Age=0; path=/;";
-        navigate("/login");
+        navigate("/");
+        window.location.reload();
     };
 
     return (
