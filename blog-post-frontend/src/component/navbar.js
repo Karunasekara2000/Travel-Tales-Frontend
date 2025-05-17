@@ -40,6 +40,17 @@ function NavBar({ user }) {
                         navigate("/login", {state: {from: "/my-posts"}});
                     }
                 }} style={linkStyle}>My Posts</span>
+
+                {/* Only Admins See This */}
+                {user?.role === 'ADMIN' && (
+                    <span
+                        onClick={() => navigate("/users")}
+                        style={{ ...linkStyle, color: "#0ff" }}
+                    >
+                        Users
+                    </span>
+                )}
+
             </div>
 
             {/* Right: User Info and Auth Buttons */}
