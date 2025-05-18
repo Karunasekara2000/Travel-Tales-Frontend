@@ -41,12 +41,6 @@ function HomePage() {
     const handleLikeToggle = async (postId, hasLiked) => {
         if (!user) return navigate("/login");
         try {
-            if (hasLiked) {
-                await axios.delete(`/api/posts/like/${postId}`, {
-                    headers: { "x-csrf-token": localStorage.getItem("csrfToken") },
-                    withCredentials: true
-                });
-            } else {
                 await axios.post(`/api/posts/like/${postId}`, {
                     user_id: user.id,
                     post_id: postId,
@@ -55,8 +49,7 @@ function HomePage() {
                     headers: { "x-csrf-token": localStorage.getItem("csrfToken") },
                     withCredentials: true
                 });
-            }
-            window.location.reload();
+             window.location.reload();
         } catch (err) {
             console.error("Like toggle failed", err);
         }
@@ -65,12 +58,6 @@ function HomePage() {
     const handleDislikeToggle = async (postId, hasDisliked) => {
         if (!user) return navigate("/login");
         try {
-            if (hasDisliked) {
-                await axios.delete(`/api/posts/like/${postId}`, {
-                    headers: { "x-csrf-token": localStorage.getItem("csrfToken") },
-                    withCredentials: true
-                });
-            } else {
                 await axios.post(`/api/posts/like/${postId}`, {
                     user_id: user.id,
                     post_id: postId,
@@ -79,7 +66,6 @@ function HomePage() {
                     headers: { "x-csrf-token": localStorage.getItem("csrfToken") },
                     withCredentials: true
                 });
-            }
             window.location.reload();
         } catch (err) {
             console.error("Dislike toggle failed", err);
@@ -92,7 +78,6 @@ function HomePage() {
             await axios.post(`/api/posts/follow/${authorId}`, {}, {
                 headers: { "x-csrf-token": localStorage.getItem("csrfToken") }
             });
-            alert("Followed successfully");
         } catch (err) {
             console.error("Follow failed", err);
         }
@@ -136,7 +121,7 @@ function HomePage() {
     return (
         <>
             <NavBar user={user} />
-            <div style={{ minHeight: "100vh", backgroundColor: "#fdfbd4", paddingTop: "30px", paddingBottom: "30px" }}>
+            <div style={{ minHeight: "100vh", backgroundColor: "#fdfbd4", paddingTop: "80px", paddingBottom: "30px" }}>
                 <div className="container" style={{ maxWidth: "900px" }}>
                     <h1 className="text-center mb-4 text-dark">
                         <i className="bi bi-globe2 me-2"></i>TravelTales: Global Stories

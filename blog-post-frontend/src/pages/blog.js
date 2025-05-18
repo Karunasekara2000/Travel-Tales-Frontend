@@ -12,6 +12,7 @@ function Blog() {
     const [countries, setCountries] = useState([]);
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [error, setError] = useState("");
+    const KEY = "cec6ce12-7296-4954-a32e-fa356300651c";
 
     const navigate = useNavigate();
 
@@ -20,10 +21,9 @@ function Blog() {
             try {
                 const response = await axios.get("http://localhost:5000/api/countries", {
                     headers: {
-                        "x-api-key": "cec6ce12-7296-4954-a32e-fa356300651c"
+                        "x-api-key": KEY
                     }
                 });
-
                 const sorted = response.data.countries.sort((a, b) => a.name.localeCompare(b.name));
                 setCountries(sorted);
             } catch (err) {

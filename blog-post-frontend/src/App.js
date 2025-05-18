@@ -7,8 +7,6 @@ import Layout from "./component/layout";
 import PersonalPosts from "./pages/personalPosts";
 import Users from "./pages/user";
 
-//import LoginPage from "./pages/LoginPage";  // already created
-
 function App() {
   return (
       <Router>
@@ -19,7 +17,6 @@ function App() {
           <Route path="/my-posts" element={<PersonalPosts />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
         </Routes>
       </Router>
   );
