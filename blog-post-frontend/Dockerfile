@@ -1,9 +1,7 @@
-# Stage 1: build React app
 FROM node:18
 
 WORKDIR /app
 
-# Install dependencies
 COPY package*.json ./
 RUN npm install
 
