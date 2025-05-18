@@ -20,7 +20,10 @@ function NavBar({ user }) {
             color: "#fff",
             display: "flex",
             justifyContent: "space-between",
-            alignItems: "center"
+            alignItems: "center",
+            position: "fixed",
+            top: 0,
+            width: "100%",
         }}>
             {/* Left: Menu Links */}
             <div>

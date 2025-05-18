@@ -73,8 +73,7 @@ function Users() {
 
     return (
         <>
-
-            <div className="container mt-4">
+            <div className="container mt-4" style={{paddingTop: "80px"}}>
                 <h2 className="text-primary mb-4">User Management</h2>
                 <table className="table table-bordered table-hover">
                     <thead className="table-light">

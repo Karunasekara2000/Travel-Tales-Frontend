@@ -18,6 +18,7 @@ function PersonalPosts() {
     const [showFollowingModal, setShowFollowingModal] = useState(false);
     const [commentsMap, setCommentsMap] = useState({});
     const [visibleCommentPostId, setVisibleCommentPostId] = useState(null);
+    const KEY = "cec6ce12-7296-4954-a32e-fa356300651c";
 
     const navigate = useNavigate();
 
@@ -64,7 +65,7 @@ function PersonalPosts() {
         try {
             const response = await axios.get("http://localhost:5000/api/countries", {
                 headers: {
-                    "x-api-key": "cec6ce12-7296-4954-a32e-fa356300651c"
+                    "x-api-key": KEY
                 }
             });
 
@@ -107,7 +108,7 @@ function PersonalPosts() {
             // Fetch the country list only once
             const countriesRes = await axios.get("http://localhost:5000/api/countries", {
                 headers: {
-                    "x-api-key": "cec6ce12-7296-4954-a32e-fa356300651c"
+                    "x-api-key": KEY
                 }
             });
             const countries = countriesRes.data.countries || [];
@@ -199,7 +200,7 @@ function PersonalPosts() {
         <>
             <NavBar user={user}/>
 
-            <div style={{backgroundColor: "#fdfbd4", paddingTop: "30px", paddingBottom: "30px"}}>
+            <div style={{backgroundColor: "#fdfbd4", paddingTop: "80px", paddingBottom: "30px"}}>
                 <div style={{padding: "20px", maxWidth: "900px", margin: "0 auto"}}>
                     <h2 className="text-center mb-4 text-primary">
                         <i className="bi bi-journal-richtext me-2"></i>My Posts
